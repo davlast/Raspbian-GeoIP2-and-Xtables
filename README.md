@@ -2,9 +2,11 @@
 Block IP ranges with geoip2 on Raspbian
 
 1) Install the xtables-addons
+
 sudo apt-get install raspberrypi-kernel-headers
 
 cd /opt/
+
 wget https://netix.dl.sourceforge.net/project/xtables-addons/Xtables-addons/xtables-addons-3.3.tar.xz
 
 tar xf xtables-addons-3.3.tar.xz
@@ -20,6 +22,7 @@ make install
 
 
 2) Create a file
+
 nano /usr/local/bin/installGeoIP.sh
 
 ```
@@ -52,10 +55,13 @@ exit 0
 ```
 
 3) Make this file executable and run
+
 chmod +x /usr/local/bin/installGeoIP.sh
+
 /usr/local/bin/installGeoIP.sh
 
 4) Add iptables rules
+
 Example:
 
 iptables -A INPUT -m geoip --src-cc US,NZ -m conntrack --ctstate NEW -j ACCEPT
