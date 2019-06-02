@@ -6,10 +6,15 @@ sudo apt-get install raspberrypi-kernel-headers
 
 cd /opt/
 wget https://netix.dl.sourceforge.net/project/xtables-addons/Xtables-addons/xtables-addons-3.3.tar.xz
+
 tar xf xtables-addons-3.3.tar.xz
+
 cd xtables-addons-3.3/
+
 ./configure
+
 make
+
 make install
 
 
